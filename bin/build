@@ -8,7 +8,7 @@ site_files=$(find ./dist -name "*.md")
 for entry in $site_files 
 do
   file_name="$(dirname "$entry")/$(basename "$entry" .md)"
-  pandoc $entry -c styles.css --metadata title="$(basename "$entry" .md)" --template=template.html -o "$file_name.html" 
+  pandoc $entry --highlight-style pygments --metadata title="$(basename "$entry" .md)" --template=template.html -o "$file_name.html" 
   sed -Ei 's/.md/.html/g' "$file_name.html"
   rm $entry
 done
