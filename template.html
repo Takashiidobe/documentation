@@ -24,7 +24,7 @@
     <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
     <style>
       body {
-        font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 400 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #111;
         background-color: #fdfdfd;
         -webkit-text-size-adjust: 100%;
@@ -159,9 +159,18 @@
       a:visited {
         color: #0366d6;
       }
-      h1,
-      h2,
+      h1 {
+        font-size: 2em;
+        margin: .67em 0;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
       h3 {
+        font-size: 1em;
+      }
+      h1,
+      h2 {
         border-bottom: 1px solid #eaecef;
         color: #111;
       }
