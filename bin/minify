@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-html_files=$(find ./dist -name "*.html")
-
-for file_name in $html_files
-do
-  minify $file_name -o $file_name
-done

@@ -1,19 +1,17 @@
 # Documentation Template
 
-This Repository is a simple Markdown to HTML generator.
+This repository is a documentation template using `mdbook`.
 
 If you'd like to see a deployed version of this repository: [Demo](https://documentation-template.netlify.app/)
 
-## Dependencies
+## Setup
 
-These dependencies must be in your $PATH.
+- Run `make install` to install the dependencies for this project. (This currently only works on Mac).
+- Otherwise, the only dependency required is `mdbook`, which can be found here: [Mdbook](https://rust-lang.github.io/mdBook/)
 
-- [pandoc](https://github.com/jgm/pandoc)
-- [GNU sed](https://www.gnu.org/software/sed/)
-- [minify](https://github.com/tdewolff/minify)
+## Development
 
-## Building
-
-- To Generate an HTML version of your documentation of Markdown files, run `make`.
-- To minify it for production, run `make minify`.
-- To deploy to production (defaulted to netlify), which does the previous two commands in tandem, and deploys to netlify, run `make deploy`.
+- Since Mdbook only shows files that are linked to in `SUMMARY.md`, there is a python helper file (located in `bin/generate_toc`) that will generate an up to date version of your book by running it.
+- `make` or `make serve` will serve an HTML version of your documentation on localhost:3000.
+- `make build` will generate a deployable HTML version of your documentation in the `book` directory.
+- `make clean` will delete the contents of the `book` directory.

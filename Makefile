@@ -1,10 +1,14 @@
 all:
-	./bin/build
+	make serve	
+serve:
+	make generate_toc && mdbook serve
+build:
+	mdbook build
+install:
+	./bin/install
 clean:
-	rm -rf site/*
-minify:
-	./bin/minify
-netlify:
-	./bin/deploy
+	rm -rf book/*
+generate_toc:
+	./bin/generate_toc
 deploy:
-	make && make minify && make netlify
+	make build && ./bin/deploy
